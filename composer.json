@@ -1,0 +1,23 @@
+{
+    "name": "mickaelsouzadev/volcanoes-finder",
+    "description": "Search information about any volcano around the world",
+    "autoload": {
+        "psr-4": {
+            "Mickaelsouzadev\\VolcanoesFinder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mickael Souza",
+            "email": "mickael.souza.if@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4",
+        "symfony/dom-crawler": "^6.0",
+        "symfony/css-selector": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
