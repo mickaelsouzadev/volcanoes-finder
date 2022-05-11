@@ -31,7 +31,16 @@ class Volcano
     private function getFormatedVolcanoes(): array
     {
         $volcanoes = $this->getVolcanoes();
-        $formatedVolcanoes = $this->formatVolcanoes($volcanoes);
+        $filteredVolcanoes = array_filter($volcanoes, fn ($volcano) => count($volcano) != 0);
+        $formatedVolcanoes = array_map(
+            fn ($volcano) => [
+                'name' => $volcano[0],
+                'type' => $volcano[1],
+                'location' => $volcano[2]
+            ],
+            $filteredVolcanoes
+        );
+
         return $formatedVolcanoes;
     }
 
@@ -67,20 +76,5 @@ class Volcano
     {
         $encodedVolcanoes = json_encode($volcanoes);
         $this->fileHandler->write('volcanoes.json', $encodedVolcanoes);
-    }
-
-    private function formatVolcanoes(array $volcanoes): array
-    {
-        $filteredVolcanoes = array_filter($volcanoes, fn ($volcano) => count($volcano) != 0);
-        $formatedVolcanoes = array_map(
-            fn ($volcano) => [
-                'name' => $volcano[0],
-                'type' => $volcano[1],
-                'location' => $volcano[2]
-            ],
-            $filteredVolcanoes
-        );
-
-        return $formatedVolcanoes;
     }
 }
