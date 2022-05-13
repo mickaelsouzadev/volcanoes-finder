@@ -102,7 +102,6 @@ class VolcanoUTest extends TestCase
 
     public function testSaveVolcanoesInLocalFile(): void
     {
-
         $volcanoes = [
             [
                 'Etna',
