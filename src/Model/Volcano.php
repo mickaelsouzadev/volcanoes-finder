@@ -35,8 +35,8 @@ class Volcano
         $formatedVolcanoes = array_map(
             fn ($volcano) => [
                 'name' => $volcano[0],
-                'type' => $volcano[1],
-                'location' => $volcano[2]
+                'location' => $volcano[1],
+                'type' => $volcano[2],
             ],
             $filteredVolcanoes
         );
